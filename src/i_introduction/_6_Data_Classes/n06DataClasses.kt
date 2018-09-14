@@ -19,8 +19,4 @@ fun task6(): List<Person> {
     return listOf(Person("Alice", 29), Person("Bob", 31))
 }
 
-class Person(val name: String, val age: Int){
-    override fun toString(): String {
-        return "Person(name=$name, age=$age)"
-    }
-}
+data class Person(val name: String, val age: Int)
