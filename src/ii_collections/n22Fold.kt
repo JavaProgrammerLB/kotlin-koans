@@ -19,3 +19,8 @@ fun Shop.getSetOfProductsOrderedByEachCustomer(): Set<Product> {
         todoCollectionTask()
     })
 }
+
+fun examples9(){
+    var result = listOf(1, 2, 3, 4).fold(1, {partResult, element -> element * partResult})
+    result == 24
+}

@@ -10,7 +10,6 @@ fun example1(list: List<Int>) {
 
 fun Shop.getCitiesCustomersAreFrom(): Set<City> {
     // Return the set of cities the customers are from
-//    todoCollectionTask()
     val customers = this.customers
     var cities:HashSet<City> = HashSet<City>()
     for (customer in customers){

@@ -8,5 +8,11 @@ fun example7() {
 
 fun Shop.groupCustomersByCity(): Map<City, List<Customer>> {
     // Return a map of the customers living in each city
-    todoCollectionTask()
+    var customers = this.customers
+    return customers.groupBy { it.city }
+}
+
+fun examples7(){
+    val result = listOf("a", "b", "c", "ccc", "ad").groupBy { it.length }
+    result == mapOf(1 to listOf("a", "b"), 2 to listOf("ba", "ad"), 3 to listOf("ccc"))
 }
