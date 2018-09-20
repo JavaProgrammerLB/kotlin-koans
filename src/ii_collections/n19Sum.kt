@@ -8,14 +8,8 @@ fun example6() {
 fun Customer.getTotalOrderPrice(): Double {
     // Return the sum of prices of all products that a customer has ordered.
     // Note: a customer may order the same product for several times.
-    var orders = this.orders
-    var result = 0.0
-    for(order in orders){
-        var products = order.products
-        var sum = products.sumByDouble { it.price }
-        result += sum
-    }
-    return result
+    val products = orders.flatMap { it.products }
+    return products.sumByDouble { it.price }
 }
 
 fun examples6(){

@@ -7,7 +7,6 @@ fun example4() {
 
 fun Shop.getCustomerWithMaximumNumberOfOrders(): Customer? {
     // Return a customer whose order count is the highest among all customers
-    val customers:List<Customer> = this.customers
     return customers.maxBy {
         it.orders.size
     }
@@ -15,16 +14,7 @@ fun Shop.getCustomerWithMaximumNumberOfOrders(): Customer? {
 
 fun Customer.getMostExpensiveOrderedProduct(): Product? {
     // Return the most expensive product which has been ordered
-    val orders = this.orders
-    var expensiveProducts = HashSet<Product>()
-    for (order in orders){
-        var products = order.products
-        var expensiveProduct = products.maxBy { it.price }
-        if (expensiveProduct != null){
-            expensiveProducts.add(expensiveProduct)
-        }
-    }
-    return expensiveProducts.maxBy { it.price }
+    return orderedProducts.maxBy { it.price }
 }
 
 fun examples5(){
